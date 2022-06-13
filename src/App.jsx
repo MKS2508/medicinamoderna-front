@@ -19,12 +19,12 @@ function App() {
 
                     <Route path="/" element={<Home/>}/>
                     <Route path="/CBD" element={<Products ProductsProps={{name: "CBD", id: 2}}/>}/>
-                    <Route path="/PARAFERNALIA" element={<Home/>}/>
-                    <Route path="/ILUMINACION" element={<Home/>}/>
-                    <Route path="/CULTIVO" element={<Home/>}/>
-                    <Route path="/MARCAS" element={<Home/>}/>
-                    <Route path="/ROPA" element={<Home/>}/>
-                    <Route path="/CONTACTO" element={<Home/>}/>
+                    <Route path="/PARAFERNALIA" element={<Products ProductsProps={{name: "CBD", id: 3}}/>}/>
+                    <Route path="/ILUMINACION" element={<Products ProductsProps={{name: "ILUMINACION", id: 4}}/>}/>
+                    <Route path="/CULTIVO" element={<Products ProductsProps={{name: "CULTIVO", id: 5}}/>}/>
+                    <Route path="/MARCAS" element={<Products ProductsProps={{name: "MARCAS", id: 6}}/>}/>
+                    <Route path="/ROPA" element={<Products ProductsProps={{name: "ROPA", id: 7}}/>}/>
+                    <Route path="/CONTACTO" element={<Products ProductsProps={{name: "CBD", id: 8}}/>}/>
                     <Route path="/PRODUCTO/:ID" element={<Home/>}/>
 
                 </Routes>

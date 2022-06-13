@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {IoIosShirt, IoLogoWhatsapp} from 'react-icons/io'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import './Header.css'
 import 'font-awesome/css/font-awesome.css';
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
@@ -15,13 +15,14 @@ const SideBar = () => {
     config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
     const [active, setActive] = useState(false)
     const [mobileMode, setMobileMode] = useState(false)
-
+    let navigate = useNavigate();
     const activateNav = () => {
         setActive(!active)
     }
     const closeNav = () => {
         setActive(false)
     }
+
     function getWindowDimensions() {
         const width = window.innerWidth
         const height = window.innerHeight
@@ -31,7 +32,7 @@ const SideBar = () => {
         };
     }
 
-      function useWindowDimensions() {
+    function useWindowDimensions() {
 
         const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
         useEffect(() => {
@@ -47,17 +48,17 @@ const SideBar = () => {
         return windowDimensions;
     }
 
-    const checkMobileMode = () =>{
+    const checkMobileMode = () => {
         const bol = (width <= 950);
         return bol;
         //setMobileMode(bol);
     }
-    const { height, width } = useWindowDimensions();
+    const {height, width} = useWindowDimensions();
 
     const mob = checkMobileMode();
     return (<>
             <div>
-                <div className={active ? 'header' : 'header-mobile'}  onMouseLeave={closeNav}>
+                <div className={active ? 'header' : 'header-mobile'} onMouseLeave={closeNav}>
 
                     {(!active) ? <div className="logo">
                             <img width="100%" alt="logo" src={logo}/>
@@ -68,45 +69,49 @@ const SideBar = () => {
                     }
 
 
-
                     <nav>
                         <ul className={active ? 'ul-item' : 'ul-item oicon'}>
-                            {!mob && !active?
-                            <li className="expandIcon" onClick={activateNav}>
-                                 <FaExpandAlt className='icon'/>
-                            </li>: <></>}
+                            {!mob && !active ?
+                                <li className="expandIcon" onClick={activateNav}>
+                                    <FaExpandAlt className='icon'/>
+                                </li> : <></>}
 
-                            <li>
+                            <li onClick={() => navigate("/CULTIVO")}>
                                 <RiPlantFill className='icon'/>
-                                <Link to="CULTIVO">CULTIVO</Link>
+                                <Link to="/CULTIVO"> CULTIVO </Link>
                             </li>
 
 
-                            <li>
+                            <li onClick={() => navigate("/ILUMINACION")}>
                                 <GiLightBulb className='icon'/>
-                                <a href="/">ILUMINACION</a>
+                                <Link to="/ILUMINACION">ILUMINACION</Link>
+
                             </li>
 
-                            <li>
+                            <li onClick={() => navigate("/CBD")}>
                                 <FaCannabis className='icon'/>
 
-                                <a className='customspan' to='/'>CBD</a>
+                                <Link className='customspan' to='/CBD'>CBD</Link>
+
                             </li>
 
 
-                            <li>
+                            <li onClick={() => navigate("/MARCAS")}>
                                 <FaBong className='icon'/>
-                                <a href="/">MARCAS</a>
+                                <Link to="/MARCAS">MARCAS</Link>
+
                             </li>
 
 
-                            <li>
+                            <li onClick={() => navigate("/PARAFERNALIA")}>
                                 <FaJoint className='icon'/>
-                                <a href="/">PARAFERNALIA</a>
+                                <Link to="/PARAFERNALIA">PARAFERNALIA</Link>
+
                             </li>
-                            <li>
+                            <li onClick={() => navigate("/ROPA")}>
                                 <IoIosShirt className='icon'/>
-                                <a href="/">ROPA</a>
+                                <Link to="/ROPA">ROPA</Link>
+
                             </li>
                             <div className="rrssIcons">
 
@@ -114,15 +119,21 @@ const SideBar = () => {
 
                             <li>
                                 <IoLogoWhatsapp className='icon'/>
-                                <a href="/">whatsapp</a>
+                                <Link to="/CULTIVO"
+                                >whatsapp</Link>
+
                             </li>
                             <li>
                                 <RiInstagramFill className='icon'/>
-                                <a href="/">INSTAGRAM</a>
+                                <Link to="/CULTIVO"
+                                >INSTAGRAM</Link>
+
                             </li>
                             <li>
                                 <FaFacebookSquare className='icon'/>
-                                <a href="/">FACEBOOK</a>
+                                <Link to="/CULTIVO"
+                                >FACEBOOK</Link>
+
                             </li>
 
 
