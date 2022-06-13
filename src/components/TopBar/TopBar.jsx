@@ -40,12 +40,8 @@ const TopBar = () => {
                 <div className={active ? 'topBar' : 'topBar-mobile'}>
 
 
-                    <div className="links">
-
-                        <span>630 66 63 20</span>
-                        <span>Pol. Portalada...</span>
-                        <span >HORARIO</span>
-                    </div>
+            <p>Estamos en el Poligono de La portalada</p>
+            <p>Estamos en el Poligono de La portalada</p>
 
                 </div>
             </div>
