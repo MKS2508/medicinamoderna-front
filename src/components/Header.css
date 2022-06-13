@@ -4,7 +4,7 @@
     display: flex;
     position: fixed;
     flex-direction: column;
-    inset: 4% 75% 0 0;
+    inset: 4% 85% 0 0;
     background-color: hsl(0, 9%, 91%);
     transition: all 400ms;
 }

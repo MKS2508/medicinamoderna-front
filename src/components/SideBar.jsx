@@ -78,7 +78,7 @@ const SideBar = () => {
 
                             <li>
                                 <RiPlantFill className='icon'/>
-                                <a href="/">CULTIVO</a>
+                                <Link to="CULTIVO">CULTIVO</Link>
                             </li>
 
 
@@ -114,15 +114,15 @@ const SideBar = () => {
 
                             <li>
                                 <IoLogoWhatsapp className='icon'/>
-                                <a href="/">nuestro whatsapp</a>
+                                <a href="/">whatsapp</a>
                             </li>
                             <li>
                                 <RiInstagramFill className='icon'/>
-                                <a href="/">NUESTRO INSTAGRAM</a>
+                                <a href="/">INSTAGRAM</a>
                             </li>
                             <li>
                                 <FaFacebookSquare className='icon'/>
-                                <a href="/">NUESTRO FACEBOOK</a>
+                                <a href="/">FACEBOOK</a>
                             </li>
 
 
